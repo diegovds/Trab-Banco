@@ -6,11 +6,11 @@ Trabalho final da Disc de Fundamentos de Banco de Dados.
 - Escolher planilha. (OK)
 - SQL criador do banco desnormalizado. (OK)
 
-##### Etapa 2 ()
-- Script que usar formas normais para decompor a tabela principal em várias tabelas. (  )
+##### Etapa 2 ( OK )
+- Script que usar formas normais para decompor a tabela principal em várias tabelas. ( OK )
 
-##### Etapa 3 ()
-- Representação gráfica do modelo ER do banco normalizado. (  )
+##### Etapa 3 ( OK )
+- Representação gráfica do modelo ER do banco normalizado. ( OK )
 
 ##### Etapa 4 ()
 - Script populador do banco desnormalizado. (OK)

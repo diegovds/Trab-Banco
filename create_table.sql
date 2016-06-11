@@ -6,9 +6,9 @@ USE agenciaUpa;
 
 drop table if exists `agenciaUpa`.`geral`;
 create table `agenciaUpa`.`geral`(
+	`fid` varchar(50) not null,
 	`id` int(10) unsigned not null default '0',
 	`empreendimento` varchar(50),
-	`fid` varchar(50) not null,
 	`subeixo` varchar(50) not null,
 	`tipo` varchar(3) not null,
 	`orgao_resp` varchar(30) not null,
@@ -21,5 +21,5 @@ create table `agenciaUpa`.`geral`(
 	`data` varchar(20) not null,
 	`geometria` varchar(100) not null,
 	`count` int default '0',
-	primary key(id)
+	primary key(fid)
 );

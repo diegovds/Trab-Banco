@@ -8,7 +8,7 @@ drop table if exists `agenciaUpa`.`geral`;
 create table `agenciaUpa`.`geral`(
 	`fid` varchar(50) not null,
 	`id` int(10) unsigned not null default '0',
-	`empreendimento` varchar(50),
+	`empreendimento` varchar(100),
 	`subeixo` varchar(50) not null,
 	`tipo` varchar(3) not null,
 	`orgao_resp` varchar(30) not null,

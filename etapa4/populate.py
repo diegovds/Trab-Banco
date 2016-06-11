@@ -8,9 +8,6 @@ with open('upa.csv', 'r') as csvfile:
 	for line in csvfile:
 		tabela.append(line[:-1].split(","))
 
-print(len(tabela))
-print(tabela[1])
-
 conn = mdb.connect('localhost', 'root', 'teutudao', 'agenciaUpa')
 with conn:
 	cur = conn.cursor()

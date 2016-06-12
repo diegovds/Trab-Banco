@@ -52,3 +52,5 @@ insert into empreendimento(idUpa, fid, idEstagio, idExecutor, idOrgao, invest_pr
 	inner join orgao_resp o on g.orgao_resp = o.nome
 	inner join executor e on g.executor = e.nome
 	inner join estagioObra p on g.estagio = p.nome;
+
+drop table geral;

@@ -2,7 +2,7 @@ USE agenciaUpa;
 
 drop table if exists `agenciaUpa`.`unidade_fed`;
 create table `agenciaUpa`.`unidade_fed`(
-	`idUni` int not null,
+	`idUni` int not null AUTO_INCREMENT,
 	`nome` varchar(2) not null,
 	primary key(`idUni`)
 );
@@ -47,8 +47,8 @@ create table `agenciaUpa`.`empreendimento`(
 drop table if exists `agenciaUpa`.`municipio`;
 create table `agenciaUpa`.`municipio`(
 	`idUni` int not null,
-	`idMuni` int not null,
-	`nome` varchar(2) not null,
+	`idMuni` int not null AUTO_INCREMENT,
+	`nome` varchar(30) not null,
 	constraint `mu_UF` primary key(`idMuni`, `idUni`),
 	foreign key (`idUni`) references `unidade_fed`(`idUni`)
 );

@@ -16,7 +16,7 @@ Trabalho final da Disc de Fundamentos de Banco de Dados.
 - Script populador do banco desnormalizado. ( OK )
 - SQL para que dados da tabela desnormalizada vá para a tabela normalizada. ( OK )
 
-##### Etapa 5
+##### Etapa 5 ( )
 - Consultas sobre esquema normalizado.
 - Agregação. ( )
 - Operador de conjunto. (  )

@@ -12,9 +12,9 @@ Trabalho final da Disc de Fundamentos de Banco de Dados.
 ##### Etapa 3 ( OK )
 - Representação gráfica do modelo ER do banco normalizado. ( OK )
 
-##### Etapa 4 ()
-- Script populador do banco desnormalizado. (OK)
-- SQL para que dados da tabela desnormalizada vá para a tabela normalizada. (   )
+##### Etapa 4 ( OK )
+- Script populador do banco desnormalizado. ( OK )
+- SQL para que dados da tabela desnormalizada vá para a tabela normalizada. ( OK )
 
 ##### Etapa 5
 - Consultas sobre esquema normalizado.

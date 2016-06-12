@@ -9,39 +9,23 @@ create table `agenciaUpa`.`unidade_fed`(
 
 drop table if exists `agenciaUpa`.`estagioObra`;
 create table `agenciaUpa`.`estagioObra`(
-	`idEstagio` int not null,
+	`idEstagio` int not null AUTO_INCREMENT,
 	`nome` varchar(20) not null,
 	primary key(`idEstagio`)
 );
 
 drop table if exists `agenciaUpa`.`executor`;
 create table `agenciaUpa`.`executor`(
-	`idExecutor` int not null,
+	`idExecutor` int not null AUTO_INCREMENT,
 	`nome` varchar(20) not null,
 	primary key(`idExecutor`)
 );
 
 drop table if exists `agenciaUpa`.`orgao_resp`;
 create table `agenciaUpa`.`orgao_resp`(
-	`idOrgao` int not null,
+	`idOrgao` int not null AUTO_INCREMENT,
 	`nome` varchar(20) not null,
 	primary key(`idOrgao`)
-);
-
-drop table if exists `agenciaUpa`.`empreendimento`;
-create table `agenciaUpa`.`empreendimento`(
-	`idEmpreendimento` int not null,
-	`fid` varchar(50) not null,
-	`idEstagio` int not null,
-	`idExecutor` int not null,
-	`idOrgao` int not null,
-	`invest_prev` varchar(10) not null,
-	`obs` varchar(100),
-	`data` varchar(20) not null,
-	primary key(`idEmpreendimento`),
-	foreign key (`idEstagio`) references `estagioObra`(`idEstagio`),
-	foreign key (`idOrgao`) references `orgao_resp`(`idOrgao`),
-	foreign key (`idExecutor`) references `executor`(`idExecutor`)
 );
 
 drop table if exists `agenciaUpa`.`municipio`;
@@ -55,31 +39,47 @@ create table `agenciaUpa`.`municipio`(
 
 drop table if exists `agenciaUpa`.`tipo_upa`;
 create table `agenciaUpa`.`tipo_upa`(
-	`idTipo` int not null,
+	`idTipo` int not null AUTO_INCREMENT,
 	`nome` varchar(30),
 	primary key (`idTipo`)
 );
 
 drop table if exists `agenciaUpa`.`subeixo`;
 create table `agenciaUpa`.`subeixo`(
-	`idSubeixo` int not null,
+	`idSubeixo` int not null AUTO_INCREMENT,
 	`nome` varchar(30),
 	primary key (`idSubeixo`)
 );
 
 drop table if exists `agenciaUpa`.`upa`;
 create table `agenciaUpa`.`upa`(
-	`idEmpreendimento` int not null,
-	`cod` int not null,
+	`idUpa` int not null AUTO_INCREMENT,
 	`idMuni` int not null,
 	`nome` varchar(100) not null,
 	`idSubeixo` int not null,
 	`idTipo` int not null,
 	`geometria` varchar(100) not null,
 	`count` int default '0',
-	constraint `empre_UPA` primary key(`idEmpreendimento`, `cod`),
-	foreign key (`idEmpreendimento`) references `empreendimento`(`idEmpreendimento`),
+	primary key(`idUpa`),
 	foreign key (`idMuni`) references `municipio`(`idMuni`),
 	foreign key (`idTipo`) references `tipo_upa`(`idTipo`),
 	foreign key (`idSubeixo`) references `subeixo`(`idSubeixo`)
+);
+
+drop table if exists `agenciaUpa`.`empreendimento`;
+create table `agenciaUpa`.`empreendimento`(
+	`idEmpreendimento` int not null AUTO_INCREMENT,
+	`idUpa` int not null,
+	`fid` varchar(50) not null,
+	`idEstagio` int not null,
+	`idExecutor` int not null,
+	`idOrgao` int not null,
+	`invest_prev` varchar(10) not null,
+	`obs` varchar(100),
+	`data` varchar(20) not null,
+	constraint `empre_UPA` primary key(`idEmpreendimento`, `idUpa`),
+	foreign key (`idUpa`) references `upa`(`idUpa`),
+	foreign key (`idEstagio`) references `estagioObra`(`idEstagio`),
+	foreign key (`idOrgao`) references `orgao_resp`(`idOrgao`),
+	foreign key (`idExecutor`) references `executor`(`idExecutor`)
 );
